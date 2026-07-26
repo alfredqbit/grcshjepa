@@ -1,0 +1,15 @@
+numpy
+pandas
+scipy
+matplotlib
+torch
+pyyaml
+tqdm
+
+[dev]
+pytest
+pytest-cov
+ruff
+black
+jupyter
+ipykernel

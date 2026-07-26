@@ -1,0 +1,38 @@
+project: GR-CS-HJEPA-Chapter4
+smoke_mode: true
+seed: 0
+output_dir: runs/smoke
+
+maze_size_train: 8
+maze_size_ood: 10
+maze_obstacle_prob: 0.18
+sorting_length_train: 8
+sorting_length_ood: 10
+train_samples: 96
+val_samples: 32
+test_samples: 32
+
+latent_dim: 32
+projection_dim: 12
+horizon_set: [1, 2]
+batch_size: 16
+epochs: 1
+lr: 0.002
+ema_tau: 0.99
+lambda_ac: 0.03
+
+n_neurons: 48
+n_filters: 2
+internal_steps: 4
+dt: 0.08
+noise_std: 0.01
+surrogate_eps: 0.7
+
+downstream_label_fraction: 0.20
+head_epochs: 1
+head_lr: 0.002
+
+routing_nodes: 28
+routing_segments: 72
+routing_terminals: 10
+damage_levels: [0.05, 0.10]
