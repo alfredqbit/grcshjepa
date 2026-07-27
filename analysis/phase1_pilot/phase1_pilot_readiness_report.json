@@ -1,0 +1,1224 @@
+{
+  "failure_rate": 0.0,
+  "gate_checks": [
+    {
+      "check": "failure_rate_below_10_percent",
+      "passed": true,
+      "value": 0.0
+    },
+    {
+      "check": "effective_rank_logged",
+      "passed": true,
+      "rows": 8
+    },
+    {
+      "check": "val_prediction_loss_logged",
+      "passed": true,
+      "rows": 4
+    },
+    {
+      "check": "routing_surface_logged",
+      "passed": true,
+      "rows": 40
+    }
+  ],
+  "interpretation": "Pilot hardening only. These values estimate runtime, variance, failure modes, and metric sanity; they are not confirmatory dissertation results.",
+  "next_actions": [
+    "Inspect failure manifests and rerun only administrative failures under the same seed.",
+    "Replace remaining toy/smoke stand-ins with production architecture modules where needed.",
+    "Freeze model variants, primary endpoints, seed list, hyperparameter budget, and analysis scripts before confirmatory runs.",
+    "Use pilot variance to select 12 to 20 independent confirmatory seeds per primary variant."
+  ],
+  "phase": "phase1_pilot",
+  "rows": 184,
+  "seeds_present": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "status_counts": {
+    "complete": 184
+  },
+  "studies_present": [
+    "study1",
+    "study2",
+    "study3"
+  ],
+  "suggested_confirmatory_n": [
+    {
+      "metric": "val_pred_loss",
+      "pilot_sd": 2.9363266065497657e-05,
+      "predictor": "mlp",
+      "study": "study1",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.02,
+      "task": "maze"
+    },
+    {
+      "metric": "val_pred_loss",
+      "pilot_sd": 1.619347078386585e-05,
+      "predictor": "spiking",
+      "study": "study1",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.02,
+      "task": "maze"
+    },
+    {
+      "metric": "val_pred_loss",
+      "pilot_sd": 0.0004674879416862808,
+      "predictor": "mlp",
+      "study": "study1",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.02,
+      "task": "sorting"
+    },
+    {
+      "metric": "val_pred_loss",
+      "pilot_sd": 0.0006001528596633972,
+      "predictor": "spiking",
+      "study": "study1",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.02,
+      "task": "sorting"
+    },
+    {
+      "head_type": "classification",
+      "metric": "test_acc",
+      "pilot_sd": 0.033979136329947625,
+      "study": "study2",
+      "suggested_n_cap20": 5,
+      "target_half_width": 0.03,
+      "task": "maze_action"
+    },
+    {
+      "head_type": "regression",
+      "metric": "test_mse",
+      "pilot_sd": 0.02613741263267676,
+      "study": "study2",
+      "suggested_n_cap20": 7,
+      "target_half_width": 0.02,
+      "task": "sorting_head"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.013084813691885534,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.00810977703140924,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.041428809013131,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.019795109488163275,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.013374921916900777,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.2951727376960616,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.024282983049775813,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.018084247595365623,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.7381506218805955,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.0,
+      "damage_type": "none",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.013078825038054099,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.01495097733880006,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.001984403041944589,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 0.20572034430834069,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.010238142936722774,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0049713244983912025,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.595772474814195,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.017796339817096458,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.007686235961608342,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.7772645840190875,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.013600299570632988,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0005864025857408954,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 0.1052544201627694,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.01369324805192407,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.002826613669516796,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.1763763421890927,
+      "study": "study3",
+      "suggested_n_cap20": 6,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.014746904362718201,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.004983302250972911,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.7283253727869907,
+      "study": "study3",
+      "suggested_n_cap20": 12,
+      "target_half_width": 1.0,
+      "variant": "euclidean_length"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.004659810564086949,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.002648535471616007,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 6.1814800773582865,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.005972094025460245,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0031387130113305134,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 8.23318917503843,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.0056689977463399484,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.003243902768574214,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 8.424996839201976,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.0,
+      "damage_type": "none",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.0050137837696784425,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.005158279466340439,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0002921151276274634,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 0.48045041975659464,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.005647469638851747,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0014631575832404033,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 13.52882506312665,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.004309985639751154,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0007159622203212718,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 15.822990958272387,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.005027691073317917,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.00020782543245177724,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.9609699450844338,
+      "study": "study3",
+      "suggested_n_cap20": 15,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.004924746679739257,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.000664075918011245,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.5667438405204812,
+      "study": "study3",
+      "suggested_n_cap20": 10,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.006342571427628849,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.001754936284317605,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.9309418344147418,
+      "study": "study3",
+      "suggested_n_cap20": 15,
+      "target_half_width": 1.0,
+      "variant": "full_surface"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.012608065364869588,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.003953714092707951,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.7979555521270298,
+      "study": "study3",
+      "suggested_n_cap20": 13,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.017337646803330786,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.009050104977448917,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.890751750455103,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.02112988053429057,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.01348739135002213,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.2538306266614287,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.0,
+      "damage_type": "none",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.008880052849855635,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.009160601322294612,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.002240276176241976,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.216486173163113,
+      "study": "study3",
+      "suggested_n_cap20": 6,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.008261328164317922,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.005158508311536566,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 0.736600020952991,
+      "study": "study3",
+      "suggested_n_cap20": 3,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.008580088976159106,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.006640021147534823,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.7954353928243494,
+      "study": "study3",
+      "suggested_n_cap20": 13,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.006631210534913078,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.002356351067078974,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.113388678135322,
+      "study": "study3",
+      "suggested_n_cap20": 18,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.007732061692819166,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0026573250553179667,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.3855001556552968,
+      "study": "study3",
+      "suggested_n_cap20": 8,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.013092517022841595,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.005931680961443617,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.5032027304571822,
+      "study": "study3",
+      "suggested_n_cap20": 9,
+      "target_half_width": 1.0,
+      "variant": "sparsity"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.012050618814694769,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.001899276574469861,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.27248317416351,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.014378035783091747,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.004274496497378486,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 4.7387394506066185,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.016060416469103642,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.006070586338804075,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "load_targeted",
+      "metric": "traffic_degradation",
+      "pilot_sd": 6.378457143720887,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.0,
+      "damage_type": "none",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.010159942735374189,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.010931128254778202,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0009497613096435521,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.5964076895114425,
+      "study": "study3",
+      "suggested_n_cap20": 10,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.007795160591705772,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0023798824891397017,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.6748199892540208,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.011801593187098818,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.002736366869054218,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "spatial",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.749558551795598,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.01009939703211998,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0007696430245869255,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.05,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 2.969412839825753,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.009890007498964966,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.00030855978092380677,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.1,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 3.560198757521756,
+      "study": "study3",
+      "suggested_n_cap20": 20,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "normalized_surface",
+      "pilot_sd": 0.011568955161489133,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "surface_degradation",
+      "pilot_sd": 0.0019512516374485642,
+      "study": "study3",
+      "suggested_n_cap20": 2,
+      "target_half_width": 0.05,
+      "variant": "tube_only"
+    },
+    {
+      "damage_level": 0.15,
+      "damage_type": "uniform",
+      "metric": "traffic_degradation",
+      "pilot_sd": 1.985416628815735,
+      "study": "study3",
+      "suggested_n_cap20": 16,
+      "target_half_width": 1.0,
+      "variant": "tube_only"
+    }
+  ]
+}

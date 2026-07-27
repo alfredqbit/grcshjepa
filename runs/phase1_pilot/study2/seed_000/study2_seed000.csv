@@ -1,0 +1,3 @@
+phase,study,task,head_type,seed,status,label_fraction,head_epochs,train_loss,train_acc,test_loss,test_acc,train_mse,test_mse,test_mae,exactish_rate
+phase1_pilot,study2,maze_action,classification,0,complete,0.1,8,1.377945899963379,0.2631579041481018,1.3890316486358643,0.2421875,,,,
+phase1_pilot,study2,sorting_head,regression,0,complete,0.1,8,,,,,0.22947518527507782,0.2165604531764984,0.36461561918258667,0.0

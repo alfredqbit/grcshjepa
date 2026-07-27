@@ -1,0 +1,46 @@
+{
+  "combined_results": "runs/phase1_pilot/phase1_pilot_combined_results.csv",
+  "environment": {
+    "cuda_available": true,
+    "cuda_version": "12.8",
+    "git_commit": "e7c7a0030fb0cda148b8aa6f9b866a98371a1470",
+    "gpu_name": "NVIDIA A100-SXM4-80GB",
+    "python": "Python 3.12.13",
+    "torch": "2.11.0+cu128"
+  },
+  "git_commit": "e7c7a0030fb0cda148b8aa6f9b866a98371a1470",
+  "meta_config": {
+    "archive_name": "phase1_pilot.tar.gz",
+    "output_dir": "runs/phase1_pilot",
+    "phase": "phase1_pilot",
+    "seed_list": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "studies": [
+      "study1",
+      "study2",
+      "study3"
+    ],
+    "study1_config": "configs/study1_pilot.yaml",
+    "study2_config": "configs/study2_pilot.yaml",
+    "study3_config": "configs/study3_pilot.yaml"
+  },
+  "phase": "phase1_pilot",
+  "rows": 184,
+  "seed_list": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "status": "complete",
+  "studies": [
+    "study1",
+    "study2",
+    "study3"
+  ],
+  "written_at_utc": "2026-07-27T05:08:54.471891+00:00"
+}
