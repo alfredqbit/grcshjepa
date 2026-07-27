@@ -1,0 +1,43 @@
+project: GR-CS-HJEPA-Chapter4
+smoke_mode: false
+seed: 0
+device: auto
+output_dir: runs/phase1_pilot
+
+maze_size_train: 10
+maze_size_ood: 14
+maze_obstacle_prob: 0.20
+sorting_length_train: 10
+sorting_length_ood: 14
+train_samples: 384
+val_samples: 128
+test_samples: 128
+
+latent_dim: 48
+projection_dim: 16
+horizon_set: [1, 2, 3]
+batch_size: 32
+epochs: 3
+lr: 0.0015
+ema_tau: 0.99
+lambda_ac: 0.03
+lambda_suff: 0.0
+lambda_alias: 0.0
+lambda_unc: 0.0
+
+n_neurons: 64
+n_filters: 2
+internal_steps: 6
+dt: 0.08
+noise_std: 0.01
+surrogate_eps: 0.7
+
+# Low-shot downstream-head pilot.
+downstream_label_fraction: 0.10
+head_epochs: 8
+head_lr: 0.0015
+
+routing_nodes: 48
+routing_segments: 128
+routing_terminals: 12
+damage_levels: [0.05, 0.10, 0.15]

@@ -1,0 +1,10 @@
+# Meta-configuration for Phase 1 pilot hardening.
+# These pilot runs are for variance/runtime/failure profiling only, not confirmatory results.
+phase: phase1_pilot
+seed_list: [0, 1, 2, 3]
+studies: [study1, study2, study3]
+study1_config: configs/study1_pilot.yaml
+study2_config: configs/study2_pilot.yaml
+study3_config: configs/study3_pilot.yaml
+output_dir: runs/phase1_pilot
+archive_name: phase1_pilot.tar.gz
